@@ -1,0 +1,55 @@
+/* Basic Settings */
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: antiquewhite;
+}
+/* NAV BAR */
+.navbar {
+    overflow: hidden;
+    background-color:rgb(202, 176, 141);
+    /* position: -webkit-sticky; */
+	/* position: sticky; */
+	/* top: 0; */
+}
+.navbar a {
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    padding: 14px 14px;
+    font-size: 25px;
+    color: black;
+    /* background-color: beige; */
+    /* border-color: rgb(202, 176, 141); */
+    border-width: 4px;
+}
+.navbar a:hover {
+    background-color: bisque;
+}
+.navbar a.auth {
+    float: right;
+}
+.navbar a.active {
+    background-color: bisque;
+}
+
+
+
+
+
+/* FOOTER */
+.footer {
+    /* position: fixed; */
+    background-color: rgb(202, 176, 141);
+    /* left: 0; */
+    bottom: 0;
+    padding-top: 95px;
+    /* width: 100%; */
+    margin-bottom: 0;
+}
+.footer h5{
+    text-align: center;
+    margin-bottom: 0;
+}
