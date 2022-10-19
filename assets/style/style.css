@@ -1,0 +1,167 @@
+/* Authentication Styles (Register & Login) */
+
+/* REGISTER */
+.authContainer {
+    display: block;
+    margin: 5%;
+}
+.registerForm {
+    display: block;
+    position: relative;
+    background-color:beige;
+    min-height: 400px;
+    max-height: 100%;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+}   
+.registerForm form {
+     display: block;
+}
+.registerForm h3 {
+    padding:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    line-height: normal;
+}
+select {
+    outline: none;
+}
+input[type='text'],
+input[type='email'], 
+input[type='password'],
+select {
+    border: none;
+    background: none;
+    border-bottom: solid 2px black;
+    font-weight: 444;
+    letter-spacing: 1px;
+    width: 70%;
+    margin: 0 0 40px 0;
+    padding: 0 0 0 4px 0;
+}
+input[type='text']:focus,
+input[type='email']:focus, 
+input[type='password']:focus{
+    outline: none;
+}
+form {
+    /* display: flex; */
+    margin: 5%;
+}
+.firstName {
+    float: left;
+    width: 45%;
+}
+.lastName {
+    float: right;
+    width: 45%;
+}
+.username {
+    float: left;
+    width: 45%;
+}
+.userType {
+    float: right;
+    width: 45%;
+}
+.email1 {
+    float: left;
+    width: 45%;
+}
+.email2 {
+    float: right;
+    width: 45%;
+}
+.password1 {
+    float: left;
+    width: 45%;
+}
+.password2 {
+    float: right;
+    width: 45%;
+}
+.authButton{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.authButton input[type='submit']{
+    text-decoration: none;
+    border: none;
+    background-color: rgb(202, 176, 141);
+    color: black;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* Log In */
+.logForm {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color:beige;
+    min-height: 400px;
+    max-height: 100%;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+}
+.logForm .username {
+    width: 100%;
+}
+.logForm .password {
+    width: 100%;
+}
+/* AUTH Errors*/
+.alertDiv{
+    width: 100%;
+}
+.errorMessage{
+    color: red;
+    border-bottom: solid 2px rgb(237, 67, 55); ;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* ABOUT */
+.about {
+    display: block;
+}
+.heading{
+    padding-top: 75px;
+    text-align: center
+}
+.features {
+    text-align: center;
+}
+.site-abilities .teachers{
+    margin-left: 15%;
+    float: left;
+    text-align: left;
+    width: 30%
+}
+.site-abilities .students{
+    margin-left: 15%;
+    text-align: left;
+    float: right;
+    width: 30%
+}
+.user-giude{
+    display: block;
+}
+.user-giude .steps {
+    margin: 5% 10% 5% 10%;
+}
