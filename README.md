@@ -10,7 +10,7 @@
     - [base styles](assets/style/base.css)
     - [styles](assets/style/style.css)
 - **Backend**:
-  - ![Relational DataBase Scheme (Scratch)](rdb.png)
+  - ![Relational DataBase Scheme (Scratch)](rdb_scheme.png)
   - [DataBase connection](includes/config.php)
   - Authentication
     - [Registration Form Sanitization](includes/classes/FormSanitizer.php)
