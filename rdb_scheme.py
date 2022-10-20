@@ -22,7 +22,7 @@ class ExistingCourses:
 class CourseContents:
 	contentId:          int, PK
 	courseId:           int, ForeignKey (ExistingCourses.courseId)
-	name:               varchar
+	lectureName:        varchar
 	lectureIndex:       int                                                 # unique per course (self incremented)
 	isAssessment:       bool
 	weight:             float, NULL                                         # if isAssessment
@@ -32,28 +32,28 @@ class CourseMaterial:
     if not CourseContents.isAssessment
     materialId:         int, PK
     contentId:          int, ForeignKey (CourseContent.contentId)
-    videoLecture:       video                                           
-    
+    videoLecture:       video
+
 
 class AssessmentQuestions:
     if CourseContents.isAssessment
     questionId:         int, PK
     contentId:          int, ForeignKey (CourseContent.contentId)
-    question:           text                                 
-    correctAnswer:      text
-    totalMarks          float                                    
+    question:           text
+    answer:             text
+    totalMarks:         float
 
 
 # STUDENTS
 class EnrolledCourses:
 	enrolledCourseId:   int, PK
-	user_id:            int, ForeignKey (Users.userId)				        # if not Users.isTeacher 
-	course_id		    int, ForeignKey (ExistingCourses.courseId)
+	userId:             int, ForeignKey (Users.userId)				        # if not Users.isTeacher
+	courseId		    int, ForeignKey (ExistingCourses.courseId)
 
 
 class CourseProgress:
 	progressId:         int, PK
-	userId:             int, ForeignKey (Users.userId)                      # if not Users.isTeacher 
+	userId:             int, ForeignKey (Users.userId)                      # if not Users.isTeacher
 	contentId: 			int, ForeignKey (CourseContent.contentId)
 	completion:         float                                               # % of video watched / completed assignment
     gradeReceived:      float, NULL                                         # if CourseContents.isAssessment
@@ -61,14 +61,14 @@ class CourseProgress:
 
 class AnsweredAssessmentQuestions:
 	answeredQuestionId: int, PK
-	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher 
-	questionId:         int, ForeignKey (AssessmentQuestions.questionId) 			
-	answer:             float
+	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher
+	questionId:         int, ForeignKey (AssessmentQuestions.questionId)
+	answer:             text
 
 
 class GradedAssessmentQuestions:
 	gradedQuestionId:   int, PK
-	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher 
-	questionId:         int, ForeignKey (AssessmentQuestions.questionId) 			
-	marksReceived:      float
-	notes:              varchar 
+	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher
+	questionId:         int, ForeignKey (AssessmentQuestions.questionId)
+	marksReceived:      float:
+	notes:              text:
