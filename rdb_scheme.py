@@ -53,7 +53,8 @@ class EnrolledCourses:
 
 class CourseProgress:
 	progressId:         int, PK
-	userId:             int, ForeignKey (Users.userId)                      # if not Users.isTeacher
+	enrolledCourseId:     int, ForeignKey (EnrolledCourses.enrolledCourseId)
+# 	userId:             int, ForeignKey (Users.userId)                      # if not Users.isTeacher
 	contentId: 			int, ForeignKey (CourseContent.contentId)
 	completion:         float                                               # % of video watched / completed assignment
     gradeReceived:      float, NULL                                         # if CourseContents.isAssessment
@@ -61,14 +62,16 @@ class CourseProgress:
 
 class AnsweredAssessmentQuestions:
 	answeredQuestionId: int, PK
-	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher
+	enrolledCourseId:     int, ForeignKey (EnrolledCourses.enrolledCourseId)
+# 	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher
 	questionId:         int, ForeignKey (AssessmentQuestions.questionId)
 	answer:             text
 
 
 class GradedAssessmentQuestions:
 	gradedQuestionId:   int, PK
-	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher
+	enrolledCourseId:     int, ForeignKey (EnrolledCourses.enrolledCourseId)
+# 	userId:             int, ForeignKey (Users.userId)	                    # if not Users.isTeacher
 	questionId:         int, ForeignKey (AssessmentQuestions.questionId)
-	marksReceived:      float:
-	notes:              text:
+	marksReceived:      float
+	notes:              text, NULL
