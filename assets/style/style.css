@@ -1,167 +1,264 @@
-/* Authentication Styles (Register & Login) */
-
-/* REGISTER */
-.authContainer {
-    display: block;
-    margin: 5%;
-}
-.registerForm {
-    display: block;
+/*Auth Login/Registration */
+.authHero{
     position: relative;
-    background-color:beige;
-    min-height: 400px;
-    max-height: 100%;
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-}   
-.registerForm form {
-     display: block;
-}
-.registerForm h3 {
-    padding:25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-input {
-    line-height: normal;
-}
-select {
-    outline: none;
-}
-input[type='text'],
-input[type='email'], 
-input[type='password'],
-select {
-    border: none;
-    background: none;
-    border-bottom: solid 2px black;
-    font-weight: 444;
-    letter-spacing: 1px;
-    width: 70%;
-    margin: 0 0 40px 0;
-    padding: 0 0 0 4px 0;
-}
-input[type='text']:focus,
-input[type='email']:focus, 
-input[type='password']:focus{
-    outline: none;
-}
-form {
-    /* display: flex; */
-    margin: 5%;
-}
-.firstName {
-    float: left;
-    width: 45%;
-}
-.lastName {
-    float: right;
-    width: 45%;
-}
-.username {
-    float: left;
-    width: 45%;
-}
-.userType {
-    float: right;
-    width: 45%;
-}
-.email1 {
-    float: left;
-    width: 45%;
-}
-.email2 {
-    float: right;
-    width: 45%;
-}
-.password1 {
-    float: left;
-    width: 45%;
-}
-.password2 {
-    float: right;
-    width: 45%;
-}
-.authButton{
-    text-align: center;
-    margin-bottom: 5%;
-}
-.authButton input[type='submit']{
-    text-decoration: none;
-    border: none;
-    background-color: rgb(202, 176, 141);
-    color: black;
-    padding: 10px 20px;
-    margin: 4px 2px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-/* Log In */
-.logForm {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color:beige;
-    min-height: 400px;
-    max-height: 100%;
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-}
-.logForm .username {
+    display: table;
+    background: url("../imgs/loginBackground.jpg") no-repeat center / cover;
+    opacity: 90%;
+    height: 50%;
     width: 100%;
 }
-.logForm .password {
-    width: 100%;
+.authContainer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+/* Characteristics of the login box of the Login webpage. */
+.authBox {
+    width: 30%;
+    background: black;
+    color: #dbd8c9;
+    position: relative;
+    box-sizing: border-box;
+    padding: 90px 40px;
+    margin: 5% 0;
+    /* Removes the sharpness of the login box borders. */
+    border-radius: 10px;
+}
+/* Characteristics of the avatar of the login box. */
+.authAvatar {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -50px;
+    left: calc(50% - 50px);
 }
 /* AUTH Errors*/
 .alertDiv{
     width: 100%;
+    padding: 5% 0;
 }
 .errorMessage{
     color: red;
-    border-bottom: solid 2px rgb(237, 67, 55); ;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+}
+/* Characteristics of the heading h1. */
+.authHero h1 {
+    margin: 25px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 32px;
+}
+/* Characteristics of the paragraph of the login box. */
+.authHero p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+/* Characteristics of the input of the login box. */
+.authHero input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+/* Characteristics of the dropdown menu of the login box. */
+.authBox select {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    background: rgb(74, 94, 131);
+    outline: none;
+    height: 30px;
+    color: #dbd8c9;
+    font-size: 17px;
+    /* Removes the sharpness of the dropdown menu borders. */
+    border-radius: 10px;
+}
+/* Characteristics of the username and password fields of the login box. */
+.authBox input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #dbd8c9;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #dbd8c9;
+    font-size: 16px;
 }
 
-/* ABOUT */
-.about {
-    display: block;
+/* Characteristics of the submit field (Login button) of the login box. */
+.authBox input[type="submit"] {
+    border: none;
+    background: rgb(74, 94, 131);
+    outline: none;
+    height: 40px;
+    color: #dbd8c9;
+    font-size: 17px;
+    border-radius: 10px;
 }
-.heading{
-    padding-top: 75px;
-    text-align: center
+/* When the cursor is over the submit field (Login button), it changes its color. */
+.authBox input[type="submit"]:hover {
+    cursor: pointer;
+    background: darkslategray;
 }
-.features {
+
+/*  Home Page */
+.header{
+    height: 600px;
+    background-image: url(../imgs/background.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 35px;
     text-align: center;
 }
-.site-abilities .teachers{
-    margin-left: 15%;
-    float: left;
-    text-align: left;
-    width: 30%
+.header .nav-list {
+    display: inline-block;
 }
-.site-abilities .students{
-    margin-left: 15%;
-    text-align: left;
-    float: right;
-    width: 30%
+.header .nav-list li{
+    display: inline-block;
+    padding: 15px 0;
 }
-.user-giude{
+.header .nav-list span{
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: orange;
+    text-decoration-thickness: 3px
+}
+.header .nav-list a {
+    text-decoration: none;
+    text-decoration-color: orange;
+    color: white;
+}
+.header .nav-list span:hover{
+    text-decoration-color: white;
+    text-decoration-thickness: 1px
+}
+.header .nav-list a:hover{
+    color: orange !important;
+}
+.header h1{
+    font-size: 60px;
+    font-family:serif;
+    margin-top: 90px;
+}
+.header h1 span{
+    color: orange;
+}
+.header .desc{
+    width: 450px;
+    height: 55px;
+    line-height: 55px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    border: 1px solid white;
+    margin: 30px auto auto;
+}
+.members-section{
+    margin: 50px 0;
+    text-align: center;
+}
+.members-section h2{
+    margin-top: 80px;
+}
+.members{
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.member{
+    width: 25%;
+    box-shadow: 0 0 15px #bbbbbb;
+    padding: 0 10px;
+    margin:  1% 10px;
+}
+/*.member-list{*/
+/*    list-style: none;*/
+/*    margin-top: 25px;*/
+/*}*/
+/*.member-item{*/
+/*    width: 350px;*/
+/*    display: inline-block;*/
+/*    margin: 10px;*/
+/*    box-shadow: 0 0 15px #bbbbbb;*/
+/*}*/
+.member img{
+    margin-top: 4px;
+    width: 100%;
+
+}
+.member h3{
+    font-size: 25px;
+    margin-top: 5px;
+}
+.member p{
+    padding: 20px;
+    text-align: justify;
+    line-height: 30px;
+
+}
+.about{
+    height: 100%;
+    background-image: url('../imgs/bg.jpeg');
+    background-size: cover;
+    background-color: #20211fe8;
+    background-blend-mode: multiply;
+    overflow: hidden;
+}
+.about .circle{
+    position: relative;
+    height: 300px;
+    width: 700px;
+    margin: 50px auto;
+    border-radius: 50%;
+    background-color: #ffa500d9;
+    text-align: center;
+    padding: 100px 120px;
+    color: black;
+}
+.about .circle h2{
+    font-size: 35px;
+}
+.about .circle p{
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 30px;
+}
+.user-guide{
+    margin: 75px 0;
     display: block;
 }
-.user-giude .steps {
-    margin: 5% 10% 5% 10%;
+.user-guide h2{
+    text-align: center;
+    padding: 20px 30px;
+    background-color:  #ffa500d9;
+}
+.user-guide .steps{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin: 4% 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.user-guide .step{
+    width: 400px;
+    margin: 10px 10px;
+    box-shadow: 0 0 15px #bbbbbb;
+}
+.user-guide .step h4{
+    font-size: 25px;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #ffa500d9;
+    border-bottom: 1px solid #ffa500d9;
+}
+.user-guide p{
+    padding: 0 20px;
+    text-align: justify;
+    line-height: 30px;
 }
