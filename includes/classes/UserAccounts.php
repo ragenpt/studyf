@@ -21,15 +21,23 @@ class UserAccounts{
 
     public function login($username, $password){
         $password = hash("sha512", $password);
-        $query = $this->conn->prepare("SELECT * FROM users WHERE username=:username; AND password=:password;");
+        $query = $this->conn->prepare("SELECT * FROM users WHERE username=:username AND password=:password;");
         $query->bindValue(":username", $username);
         $query->bindValue(":password", $password);
         $query->execute();
         if($query->rowCount() == 1){
-            return true;
+            $result = $query->fetch();
+            $this->debug_to_console($result);
+            return [true, $result];
         }
         array_push($this->errorArr, Constants::$incorrectCredentials);
         return false;
+    }
+    public function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
 
     private function createNewAccount($fName, $lName, $username, $userType, $email, $password){
@@ -43,9 +51,10 @@ class UserAccounts{
         $query->bindValue(":em", $email);
         $query->bindValue(":pw", $password);
         $query->bindValue(":it", $userType);
-        // Debugging query
+//         Debugging query
 //        $query->execute();
 //        var_dump($query->errorInfo());
+//        return false;
         return $query->execute();
     }
 
@@ -66,7 +75,6 @@ class UserAccounts{
             array_push($this->errorArr, Constants::$lastNameCharacters);
         }
     }
-
 
     private function validateUsername($username){
         if(strlen($username) < 2 || strlen($username) > 50){
