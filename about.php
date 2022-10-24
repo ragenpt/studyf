@@ -1,5 +1,5 @@
 <?php
-include 'partials/.php';
+include 'partials/base.php';
 startblock('main');
 ?>
 <div class = "header">
