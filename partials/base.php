@@ -18,17 +18,25 @@ require_once 'includes/ti/ti.php';
                     <a href='register.php' class='auth <?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/register.php' ? 'active' : '')?>'>Register</a>
                 </div>
             <!--  NAV BAR END -->
-        <?php else : ?>
+        <?php elseif ($_SESSION['userIsTeacher']): ?>
         <!-- NAV BAR AUTHENTICATED AS TEACHER -->
         <div class="navbar">
-            <a href="dashboard.php" class='<?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/dashboard.php' ? 'active' : '')?>'>Dashboard</a>
+            <a href="teacherDashboard.php" class='<?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/teacherDashboard.php' ? 'active' : '')?>'>Dashboard</a>
             <a href="about.php" class='<?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/about.php' ? 'active' : '')?>'>Grades.easy</a>
             <a href="account.php" class='auth <?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/account.php' ? 'active' : '')?>'>
                 <?php echo $_SESSION['userLoggedIn'] ?></a>
             <a href="logout.php" class='auth'>Log Out</a>
         </div>
         <!--  NAV BAR END -->
-        <!-- NAV BAR AUTHENTICATED AS TEACHER -->
+        <?php else : ?>
+            <!-- NAV BAR AUTHENTICATED AS STUDENT -->
+            <div class="navbar">
+                <a href="studentDashboard.php" class='<?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/studentDashboard.php' ? 'active' : '')?>'>Dashboard</a>
+                <a href="about.php" class='<?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/about.php' ? 'active' : '')?>'>Grades.easy</a>
+                <a href="account.php" class='auth <?php echo ($_SERVER['PHP_SELF'] == '/soen_proj/account.php' ? 'active' : '')?>'>
+                    <?php echo $_SESSION['userLoggedIn'] ?></a>
+                <a href="logout.php" class='auth'>Log Out</a>
+            </div>
             <!--    add nav bar    -->
         <!--  NAV BAR END -->
         <?php endif; ?>
