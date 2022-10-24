@@ -1,8 +1,12 @@
 <?php
 include 'partials/base.php';
+include_once 'partials/authCheck.php';
 require_once 'includes/classes/FormSanitizer.php';
 require_once 'includes/classes/Constants.php';
 require_once 'includes/classes/UserAccounts.php';
+
+redirectIfAuthenticated();
+
 //<!-- Auth -->
 $account = new UserAccounts($connection);
 if(isset($_POST['login'])){
