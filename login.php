@@ -10,10 +10,16 @@ if(isset($_POST['login'])){
     $username = FormSanitizer::username($_POST['username']);
     $password = FormSanitizer::confirmPassword($_POST['password']);
     // Validate Credentials
-    $success = $account->login($username, $password);
-    if($success){
+    $result = $account->login($username, $password);
+
+    if($result[0]){
         $_SESSION['userLoggedIn'] = $username;
-        header("Location: /soen_proj/index.php");
+        $_SESSION['userIsTeacher'] = $result[1]['isTeacher'];
+        if ($_SESSION['userIsTeacher']){
+            header("Location: /soen_proj/about.php");
+        } else{
+            header("Location: /soen_proj/register.php");
+        }
     }
 }
 function getInputValue($name){
@@ -21,34 +27,33 @@ function getInputValue($name){
         echo $_POST[$name];
     }
 }
-?>
 
-<!-- Auth Ended -->
-<?php startblock('main') ?>
+startblock('main')
+?>
+    <div class="authHero">
         <div class="authContainer">
-            <div class="logForm">
-                <h3>Log In</h3>
-                <div class="alertDiv">
-                    <?php
-                    echo  $account->getError(Constants::$incorrectCredentials);
-                    ?>
+            <div class="authBox">
+                <img src="assets/imgs/loginAvatar1.png" class="authAvatar" alt="Auth Avatar">
+                <div>
+                    <h1>Login Here</h1>
                 </div>
-                <form action="" method='POST'>
-                    <div class="username">
-                        <label for="username"></label>
-                        <input type="text" name='username' placeholder='Username'
-                               value="<?php getInputValue('username');?>" required>
-                    </div>
-                    <div class="password">
-                        <label for="password"></label>
-                        <input type="password" name="password" placeholder='Password'
-                               value="<?php getInputValue('password');?>" required>
-                    </div>
-                    <div class="authButton">
-                        <input type="submit" name='login' value='Register'>
+                <div class="alertDiv">
+                    <?php echo  $account->getError(Constants::$incorrectCredentials); ?>
+                </div>
+                <form action="" method="POST">
+                    <div>
+                        <p>Username</p>
+                        <!-- The text field of the login box for the user's username. -->
+                        <input type="text" name="username" value="<?php getInputValue('username'); ?>"
+                               placeholder="Enter Username" required>
+                        <p>Password</p>
+                        <!-- The password field of the login box for the user's password. -->
+                        <input type="password" name="password" placeholder="Enter Password" required>
+                        <!-- Submit field of the login box for Logging in. -->
+                        <input type="submit" name="login" value="Login">
                     </div>
                 </form>
             </div>
         </div>
-
+    </div>
 <?php endblock() ?>
