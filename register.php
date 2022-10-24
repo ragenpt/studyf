@@ -1,11 +1,13 @@
 <?php
 include 'partials/base.php';
+include_once 'partials/authCheck.php';
 require_once 'includes/classes/FormSanitizer.php';
 require_once 'includes/classes/Constants.php';
 require_once 'includes/classes/UserAccounts.php';
 
-$account = new UserAccounts($connection);
+redirectIfAuthenticated();
 
+$account = new UserAccounts($connection);
 if(isset($_POST['submitRegistration'])){
     // Sanitization
     $firstName = FormSanitizer::sanitizeString($_POST['firstName']);
