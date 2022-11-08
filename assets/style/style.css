@@ -247,6 +247,745 @@ input[type="email"] {
 }
 /*  Home Page Ends */
 
-/* Starting */
+/* Dashboard */
+.dashboard{
+    padding: 15px 0 5px 0;
+    min-height: 650px;
+    /*background-color: #676765c9;*/
+}
+.side-menu {
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    height:80%;
+    width: 20%;
+    min-width: 150px;
+    background-color: #ffffffe0;
+    overflow-y:scroll;
+    position: fixed;
+    border-radius: 20px;
+    padding: 0 0 7px 0;
+}
+.side-menu .content{
+    width: 96%;
+    margin-left: 2%;
+}
+.side-menu h6{
+    color: #000000f5;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 7px 0;
+}
+.chosen-course{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
+.courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
+.course {
+    max-height: 100px;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 4px 4px 3px #bbbbbb;
+    margin: 4px 0;
+    border-radius: 20px;
+    width: 96%;
+}
+.course:hover {
+    box-shadow: 2px 2px 3px #bbbbbb;
+}
+.courses .active{
+    box-shadow: 0 0 4px orange;
+}
+.course a{
+    text-decoration: none;
+    font-size: 25px;
+    margin: 0;
+    color: #77571d;
+}
+.course a:hover{
+    font-size: 26px;
+    color: black;
+}
+.course .underline{
+    border-top: 0 solid #bbb;
+    width: 80%;
+    padding: 0;
+    margin: 10px auto;
+}
+.main-section{
+    position: relative;
+    margin-left: 20%;
+    min-height: 651px;
+}
+.main-section .heading{
+    width: 94%;
+    margin: -14px 3% 25px;
+    background-color: #ffffffe0;
+    border-radius: 20px;
+}
+.main-section .emptyHeading{
+    padding: 75px 0 600px 100px;
+}
+.main-section .heading h1{
+    margin-left: 6%;
+    padding-top: 27px;
+}
+.main-section .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-left: 4%;
+    list-style: none;
+}
+.main-section .heading h2{
+    margin-left: 4%;
+    padding-top: 3%;
+}
+.main-section .heading p{
+    margin-left: 5%;
+    padding: 0 0 20px 0;
+    line-height: 25px;
+}
+.main-section .breadcrumb a {
+    color: black;
+}
+.main-section .breadcrumb a:hover {
+    color: #c88a1a;
+}
+.main-section .course-content{
+    width: 94%;
+    margin: 25px 3%;
+    background-color: #ffffffe0;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 17px 0;
+    border-radius: 20px;
+}
+.main-section .course-content h1{
+    margin-left: 5%;
+}
+.main-section .course-content .section {
+    position: relative;
+    min-width: 300px;
+    margin: 1% 2%;
+    border-radius: 20px;
+    padding: 16px 0;
+    box-shadow: 3px 3px 8px black;
+    background-color: white;
+}
+.main-section .course-content .section:hover {
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px black;
+}
+.main-section .course-content .section p{
+    padding: 15px;
+    margin: 0 4%;
+    line-height: 25px;
+}
+#createNewCourse{
+    margin-left: 89%;
+    padding: 10px;
+}
+/* Create New Course/Assignent Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    /*     overflow: auto;  */
+    /* enable scroll */
+    background-color: rgb(0,0,0);
+    /*     background-color: rgba(0,0,0,0.4); */
+}
+.modal-content{
+    color: white;
+    box-shadow: 0 0 10px white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80%;
+}
+.modalContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+/* Modal Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #f00;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* End Modal Close Button */
+.modalBox {
+    /*! width: 30%; */
+    background: #000000c9;;
+    color: #dbd8c9;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0px 40px;
+    margin: 5% 0;
+    /* Removes the sharpness of the login box borders. */
+    border-radius: 10px;
+}
+.modal-content h1 {
+    margin: 0 0 3px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 32px;
+}
+.modal-content p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+.modal-content input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.modal-content input[type='radio'] {
+    width: 20%;
+    margin: 15px 0;
+}
+.modalBox input[type="text"],
+input[type="number"]{
+    border: none;
+    border-bottom: 1px solid #dbd8c9;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #dbd8c9;
+    font-size: 16px;
+}
+.modalBox input[type="submit"] {
+    border: none;
+    background: orange;
+    outline: none;
+    color: black;
+    height: 40px;
+    font-size: 17px;
+    border-radius: 10px;
+}
+.modalBox input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ff6c00;
+}
 
-/*End */
+/* End Create New Course/Assignment Modal*/
+
+/* ––––– Teacher Input ––––––– */
+.custom-textarea{
+    margin-left: 20px;
+    line-height: 150%;
+    min-height: 50px;
+    resize: none;
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.custom-textarea:focus{
+    outline: none;
+    padding: 10px 0;
+    border-bottom: orange solid 1px;
+    border-top: orange solid 1px;
+}
+.main-section .course-content .titleInput { /* Header Input*/
+    margin-left: 5%;
+    height: 39px;
+    width: 80%;
+    border: none;
+    font-size: 35px;
+    font-family: serif;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.main-section .course-content .titleInput:focus{ /* Header Input*/
+    outline: none;
+    padding: 10px 0;
+    margin: 10px 0 20px 5%;
+    border-bottom: orange solid 1px;
+    border-top: orange solid 1px;
+}
+.main-section .course-content .sectionLinksArea{
+    float: left;
+}
+.main-section .course-content .sectionLink{
+    margin-left:4%;
+    /*! width: 51%; */
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0;
+    cursor: pointer;
+    height: 20px;
+    /*! max-width: 40px; */
+}
+.main-section .course-content .linkInput { /* Links Input*/
+    height: 30px;
+    max-width: 30%;
+    border: none;
+    font-size: 15px;
+    font-family: serif;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.main-section .course-content .linkInput:focus{ /* Header Input*/
+    outline: none;
+    border-bottom: orange solid 1px;
+    border-top: orange solid 1px;
+}
+.sectionFileArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.sectionFileArea span{
+    margin: 16px 0 0 20px;
+}
+.course-content .sectionFileArea input[type="file"] {
+    display: none;
+}
+.course-content .sectionFileArea .custom-file-upload{
+    padding: 10px 20px;
+    margin: 5px 0 5px 20px;
+    border: 1px solid #ccc;
+    width: 8%;
+    /*         display: flex; */
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 0 1px black;
+}
+.course-content .sectionFileArea .custom-file-upload:hover{
+    border-radius: 15px;
+}
+/* ADD BUTTON */
+#addContentSection{
+    margin-left: 95%;
+}
+.addContentBtn {
+    border-radius: 50%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    position: relative;
+    cursor: pointer;
+    margin: 8px 0;
+}
+.addContentBtn:hover{
+    background-color: orange;
+}
+.addContentBtn::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    height: 4px;
+    margin-top: -2px;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+    z-index: 9;
+}
+.addContentBtn::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    width: 4px;
+    margin-left: -2px;
+    left: 50%;
+    top: 5px;
+    bottom: 5px;
+    z-index: 9;
+}
+/* ADD BUTTON END */
+/* Delete BUTTON */
+.deleteContentBtn {
+    border-radius: 50%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    background-color: #b90000;
+    position: relative;
+    cursor: pointer;
+    margin-left: 96%;
+}
+.deleteContentBtn:hover{
+    background-color: red;
+}
+.deleteContentBtn::after{
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    height: 4px;
+    margin-top: -2px;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+    z-index: 9;
+}
+/* Delete BUTTON END */
+/* Dashboard End */
+/* Assessments Page */
+.assessmentsMain{
+    width: 78%;
+    margin-left: 22%;
+}
+.listOfAllAssessments{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 4px grey;
+    width: 87%;
+    margin: 4%;
+    padding: 25px 10px;
+    min-height: 848px;
+}
+.listOfAllAssessments .title{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+.singleAssessment{
+    margin: 3px 2%;
+    padding: 10px;
+    min-width: 50%;
+    /*! width:  ; */
+    display: block;
+}
+.singleAssessment a{
+    text-decoration: none;
+    display: flex;
+    padding: 10px 15px;
+    box-shadow: 1px 1px 4px black;
+}
+.singleAssessment .assessmentTitleSpan{
+    width: 52%;
+}
+.singleAssessment .assessmentStats{
+    padding: 0 0 0 20px;
+}
+.singleAssessment a:hover{
+    box-shadow: 2px 2px 4px black;
+}
+
+/* Create Assessment Styles */
+.assessmentTemplate{
+    width: 80%;
+    box-shadow: 2px 2px 8px #bbbbbb;
+    margin: 10%;
+}
+.templateContent{
+    display: flex;
+    flex-direction: column;
+    padding: 5% 6%;
+}
+.totalMarks{
+    margin: -30px -20px;
+}
+.templateHeader{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.templateHeader h1{
+    height: 35px;
+    font-size: 25px;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 10px 10px 0 10px;
+}
+.templateHeader h1:focus{
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 4px orange;
+    border-radius: 10px;
+    padding: 10px 10px 0 10px;
+}
+.templateBody{
+    display: flex;
+    flex-direction: column;
+    padding: 6% 0;
+}
+.questionContainer{
+    padding: 20px 0;
+}
+.questionHeader{
+}
+.questionMarkInputDiv{
+    padding: 10px 0;
+}
+.questionMarkInputDiv label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.questionMarkInputDiv input[type='number']{
+    padding: 4px;
+    border: 1px solid orange;
+    width: 4%;
+    border-radius: 10px;
+    height: 16px;
+    color: black;
+}
+.questionMarkInputDiv input[type='number']:focus{
+    outline: none;
+}
+.questionInput {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+}
+.questionInput textarea{
+    margin: 13px 0 0 0;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    padding: 10px 10px 0 10px;
+    height: 50px;
+    max-width: 100%;
+    min-width: 100%;
+}
+.questionInput textarea:focus{
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 4px orange;
+    padding: 10px 10px 0 10px;
+    border-radius: 10px;
+}
+.questionAnswers{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+.questionAnswer{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+.questionAnswer p{
+    margin: 4px 0 0 8px;
+    padding: 5px 10px 5px 10px;
+    min-width: 100%;
+    max-width: 100%;
+}
+.questionAnswer p:focus{
+    outline: none;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 1px 1px 4px orange;
+    border-radius: 10px;
+}
+.addNewQuestion{
+    display: flex;
+    flex-direction: row;
+    margin-left: 89%;
+    border: 1px solid orange;
+    padding: 5px;
+    border-radius: 10px;
+}
+.addNewQuestion:hover{
+    box-shadow: 1px 1px 4px orange;
+    border: none;
+}
+.addNewQuestion input[type='number']{
+    margin: 0 10px;
+    border: none;
+    max-width: 35px;
+    cursor: pointer;
+    min-width: 35px;
+    font-size: 18px;
+    color: black;
+
+}
+.addNewQuestion input[type='number']:focus{
+    outline: none;
+    box-shadow: 1px 1px 4px orange;
+}
+.addNewQuestion .tooltip{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    margin: -90px 0 0 -30px;
+    padding: 5px;
+    background-color: black;
+    color: orange;
+    text-align: center;
+    border-radius: 10px;
+}
+.addNewQuestion:hover .tooltip{
+    visibility: visible;
+}
+.addNewQuestion .tooltipError{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    margin: 60px 0 0 -30px;
+    padding: 5px;
+    color: red;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid red;
+}
+#markDistributionError, #questionCountError{
+    display: flex;
+    border-bottom: 1px solid red;
+    width: 50%;
+    justify-content: center;
+    margin: 0 0 25px 25%;
+    color: red;
+    visibility: collapse;
+}
+.saveAssessmentBtn{
+    width: 20%;
+    margin-left: 40%;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-size: 19px;
+    cursor: pointer;
+}
+.saveAssessmentBtn:hover{
+    font-size: 20px;
+    border-bottom: 1px solid orange;
+}
+/* End Create Assessment Styles */
+/* Assessments Page End */
+
+/* STUDENTS */
+/* Explore Page */
+.searchBarContainer{
+    display: flex;
+    padding: 25px 100px 100px 100px;
+    border: 3px solid orange;
+    border-radius: 50px;
+    width: 80%;
+    margin: 8% 0 0 3%;;
+    background: #000000f2;
+    align-content: center;
+    justify-content: center;
+}
+.searchBar{
+    width: 100%;
+    padding: 0 20%;
+}
+.searchBar h3{
+    justify-content: center;
+    text-align: center;
+    padding: 25px 0 40px 0;
+    font-size: 25px;
+    color: white;
+}
+.searchBar input{
+    border: 2px solid orange;
+    border-radius: 20px;
+    box-shadow: 0 0 50px orange;
+    min-height: 50px;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 22px;
+}
+.searchBarContainer:focus{
+    background-color: grey;
+}
+.searchBar input:focus{
+    outline: none;
+}
+.suggestedCoursesContainer{
+    margin: 5% 50px;
+    box-shadow: 1px 1px 10px black;
+    padding: 20px;
+}
+.suggestedCoursesContainer h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.suggestedCourses{
+    display: flex;
+    flex-direction: row!important;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 2%
+    /*     justify-content: center; */
+}
+.suggestedCourse{
+    margin: 10px;
+    box-shadow: 1px 1px 10px black;
+    padding: 20px  20px;
+    max-width: 250px;
+    height: 450px
+}
+.suggestedCourse .courseTitle{
+    margin: 0 0 30px 0;
+    border: 1px solid orange;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+}
+.suggestedCourse .courseImage{
+    width: 100%;
+}
+.suggestedCourse .courseImage img{
+    width: 100%;
+}
+.suggestedCourse .courseTags{
+    display: flex;
+    justify-content: center;
+}
+.suggestedCourse .courseTags p{
+    padding: 4px;
+    border: 1px solid orange;
+    border-left: none;
+    border-right: none;
+}
+.suggestedCourse .courseDesc{
+    /*     overflow: hidden; */
+}
+.suggestedCourse .courseDesc p{
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+/* End Explore Page */
+
+
+
+
+
+
