@@ -163,7 +163,7 @@ input[type="email"] {
     flex-direction: row;
 }
 .member{
-    width: 25%;
+    width: 20%;
     box-shadow: 0 0 15px #bbbbbb;
     padding: 0 10px;
     margin:  1% 10px;
