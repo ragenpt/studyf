@@ -984,7 +984,42 @@ input[type="number"]{
 }
 /* End Explore Page */
 
+/* Grade display page */
+.ReportTitle{
+  margin-top: 25px;
+  margin-left: 25%;
+  margin-right: 20px;
+  text-align: center;
+  border-style: outset;
+  border-radius: 10px;
+  border-width: medium;
+  box-shadow: 1px 1px 10px black;
+  font-size: 20px;
 
+}
+table.a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  table-layout: auto;
+  width: 100%;
+}
+.reportTotal{
+  margin-top: 25px;
+  margin-left: 25%;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  text-align: left;
+  border-style: outset;
+  border-radius: 10px;
+  border-width: medium;
+  box-shadow: 1px 1px 10px black;
+  font-size: 20px;
+}
+.reportTotaltext{
+  margin-left: 10px;
+  font-size: 20px;
+}
+/* End of Grade display */
 
 
 
